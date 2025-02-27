@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>RenitentCloth - Home</title>
-
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <title>Snake</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
     <header class="header">
-        <a class="website-logo" href="main.htm">
+        <a class="website-logo" href="../main.htm">
           RenitentCloth
           </a>
         <nav class="navbar">
             <ul class="navbar-lists" id="myTopnav">
                 <li>
                       <i class="fas fa-home"></i>
-                          <a class="navbar-link home-link" href="main.htm">
+                          <a class="navbar-link home-link" href="../main.htm">
                               Home</a>
                   </li>
                 <li>
                       <i class="fas fa-user"></i>
                           <a class="navbar-link about-link" 
-                           href="Snake/main.htm">
+                           href="main.htm">
                               Snake game
                           </a>
                 </li>
             </ul>
         </nav>
     </header>
-</body>
 
+    <div class="container1">
+        <p><h1 class="fixed">Snake Game</h1></p>
+    </div>
+    <div class="container2">
+        <canvas id="snakeGame" width="620" height="300" style="border:1px solid black;">
+        </canvas>
+    </div>
+    <div class="container1">
+        <p><h2 class="second" id="hs"></h2></p>
+    </div>
+</body>
 </html>
 <script src="script.js"></script>

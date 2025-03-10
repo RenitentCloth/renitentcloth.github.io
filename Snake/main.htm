@@ -3,6 +3,7 @@
 <head>
     <title>Snake</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./snakeStyle.css">
 </head>
 <body>
     <header class="header">
@@ -18,8 +19,7 @@
                   </li>
                 <li>
                       <i class="fas fa-user"></i>
-                        <a class="navbar-link about-link" 
-                        href="gamesTab.html">
+                        <a class="navbar-link about-link" href="../gamesTab.html">
                             Games
                         </a>
                 </li>
@@ -33,10 +33,13 @@
     <div class="container2">
         <canvas id="snakeGame" width="620" height="300" style="border:1px solid black;">
         </canvas>
+        <button onclick="restartGame()" id="PlayAgainButton">Play again</button>
     </div>
     <div class="container1">
         <p><h2 class="second" id="hs"></h2></p>
     </div>
+    <!--TODO here: Create pad with buttons for phone navigation. In CSS, create rule that ensures
+    it's only displayed when on phone (or when width of page is below a certain value)-->
 </body>
 </html>
 <script src="script.js"></script>

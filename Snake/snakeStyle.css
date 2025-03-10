@@ -1,0 +1,18 @@
+#PlayAgainButton {
+    background-color: #ffffff;
+    font-size: 50px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    text-align: center;
+    display: none;
+    z-index: 1;
+    position: absolute;
+    left: 39%;
+    top: 40%;
+    width: 22%;
+}
+
+#PlayAgainButton:hover {
+    cursor: pointer;
+    color: #575757;
+}

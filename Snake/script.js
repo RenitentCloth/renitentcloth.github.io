@@ -128,31 +128,29 @@ ctx.fillStyle = "white";
 ctx.fillRect(0, 0, recWidth, recHeight);
 
 window.addEventListener("keydown", (e) => {
+    takeDirectionInput(e.code);
+});
+
+function takeDirectionInput(direction) {
+    //Direction is a key name, for example ArrowUp.
     if (takeInput==true){
         if(inGame==true)
-            s.setDir(e.code);
+            s.setDir(direction);
         takeInput=false;
     }
-});
+}
 
-window.addEventListener("click", (e) => {
-    if (inGame==false){
-        s = new SnakeGame();
-        snakeInterval = setInterval(() => {
-            playGame();
-        }, minSnakeMoveInterval);
-        inGame = true;
+function restartGame() {
+    if (inGame==true){
+        console.log("Warning, improper use: restart in mid-game");
+        clearInterval(snakeInterval);
     }
-});
-
-function drawGameOver(){
-    ctx.fillStyle = "black";
-    ctx.fillRect(recWidth/4-3,2*recHeight/5-3,recWidth/2+6,recHeight/5+6);
-    ctx.fillStyle = "white";
-    ctx.fillRect(recWidth/4,2*recHeight/5,recWidth/2,recHeight/5);
-    ctx.fillStyle = "black";
-    ctx.font = "30px Arial";
-    ctx.fillText("Play again",50*recWidth/128,11*recHeight/20);
+    s = new SnakeGame();
+    snakeInterval = setInterval(() => {
+        playGame();
+    }, minSnakeMoveInterval);
+    inGame = true;
+    document.getElementById("PlayAgainButton").style.display = "none";
 }
 
 function playGame(){
@@ -172,14 +170,15 @@ function playGame(){
             document.getElementById("hs").innerHTML = "Highscore: " + highScore;
         }
         if (!inGame) {
-            drawGameOver();
+            //Game over. Draw "Play again" button.
             clearInterval(snakeInterval);
+            document.getElementById("PlayAgainButton").style.display = "inline-block";
         }
         updateCount = 0;
         takeInput = true;
     } else {
         updateCount++;
-    }    
+    }
 }
 
 snakeInterval = setInterval(() => {

@@ -38,8 +38,21 @@
     <div class="container1">
         <p><h2 class="second" id="hs"></h2></p>
     </div>
-    <!--TODO here: Create pad with buttons for phone navigation. In CSS, create rule that ensures
-    it's only displayed when on phone (or when width of page is below a certain value)-->
+    <div class="buttonArea">
+        <button class="emptyButton"></button>
+        <button onclick="takeDirectionInput('ArrowUp')" class="directionButton">^</button>
+        <button class="emptyButton"></button>
+    </div>
+    <div class="buttonArea">
+        <button onclick="takeDirectionInput('ArrowLeft')" class="directionButton">&lt</button>
+        <button class="emptyButton"></button>
+        <button onclick="takeDirectionInput('ArrowRight')" class="directionButton">&gt</button>
+    </div>
+    <div class="buttonArea">
+        <button class="emptyButton"></button>
+        <button onclick="takeDirectionInput('ArrowDown')" class="directionButton">v</button>
+        <button class="emptyButton"></button>
+    </div>
 </body>
 </html>
 <script src="script.js"></script>

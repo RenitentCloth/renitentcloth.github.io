@@ -45,7 +45,7 @@
     height: 150px;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1000px) {
     .buttonArea {
         display: none;
     }
